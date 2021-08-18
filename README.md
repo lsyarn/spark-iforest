@@ -283,6 +283,17 @@ Please cite spark-iforest in your publications if it helped your research. Here 
 }
 ```
 
+## Tips
+
+If you have encountered `Cannot assign instance of java.lang.invoke.SerializedLambda to field` problem, make sure add `spark-iforest-<version>.jar` to `spark.jars`.
+
+Python example:
+
+```python
+conf = SparkConf().setAll(# some other configures
+).set('spark.jars', 'file:///opt/spark/jars/spark-iforest-<version>.jar')
+```
+
 ## References:
 
 [1] Liu F T, Ting K M, Zhou Z, et al. Isolation Forest[C]. international conference on data mining, 2008.
