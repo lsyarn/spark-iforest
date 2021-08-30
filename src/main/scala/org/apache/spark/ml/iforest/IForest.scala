@@ -904,7 +904,7 @@ class IForestSummary (
 
   @transient lazy val anomalyScores: DataFrame = predictions.select(anomalyScoreCol)
 
-  def numAnomalies: Long = anomalies.where(col(predictionCol) > 0).collect().length
+  def numAnomalies: Long = anomalies.where(col(predictionCol) > 0).count()
 }
 
 
